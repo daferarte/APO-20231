@@ -30,6 +30,7 @@ public class Logo extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -49,13 +50,16 @@ public class Logo extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon("/Users/sistemas/Downloads/Logo_Maker_to_Design_a_Cupcake_Logo_copy-removebg-preview (1).png")); // NOI18N
         getContentPane().add(jLabel2, java.awt.BorderLayout.PAGE_START);
 
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
         jButton1.setText("Guardar");
         jPanel1.add(jButton1);
 
         jButton2.setText("Reiniciar");
         jPanel1.add(jButton2);
+
+        jButton3.setText("siguiente");
+        jPanel1.add(jButton3);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_END);
 
@@ -67,19 +71,19 @@ public class Logo extends javax.swing.JFrame {
         jPanel3.setLayout(new java.awt.GridLayout(0, 1));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre"));
-        jPanel4.setLayout(new java.awt.GridLayout());
+        jPanel4.setLayout(new java.awt.GridLayout(1, 0));
         jPanel4.add(jTextField1);
 
         jPanel3.add(jPanel4);
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Apellido"));
-        jPanel5.setLayout(new java.awt.GridLayout());
+        jPanel5.setLayout(new java.awt.GridLayout(1, 0));
         jPanel5.add(jTextField2);
 
         jPanel3.add(jPanel5);
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Correo"));
-        jPanel6.setLayout(new java.awt.GridLayout());
+        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
         jPanel6.add(jTextField3);
 
         jPanel3.add(jPanel6);
@@ -137,6 +141,7 @@ public class Logo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
