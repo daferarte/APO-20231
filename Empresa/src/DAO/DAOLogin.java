@@ -10,6 +10,8 @@ package DAO;
  */
 public interface DAOLogin {
     
-    public boolean VerificarUsuarios(String usuario, String contrasenia); 
+    public boolean VerificarUsuarios(String usuario, String contrasenia);
+    public String getUsuario();
+    public boolean CambiarContrasenia(String contrasenia);
     
 }

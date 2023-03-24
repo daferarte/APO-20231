@@ -12,11 +12,21 @@ import DAO.DAOLogin;
  */
 public class ControladorLogin implements DAOLogin{
 
+    private static ControladorLogin controladorLogin;
     private String usuario;
     private String contrasenia;
+    
+    
 
-    public ControladorLogin() {
+    private ControladorLogin() {
         
+    }
+    
+    public static ControladorLogin getControladorLogin(){
+        if(controladorLogin==null)
+            controladorLogin=new ControladorLogin();
+        
+        return controladorLogin;
     }
 
     @Override
@@ -27,6 +37,19 @@ public class ControladorLogin implements DAOLogin{
             estado=true;
         
         return estado;
+    }
+
+    @Override
+    public String getUsuario() {
+        return this.usuario;
+    }
+
+    @Override
+    public boolean CambiarContrasenia(String contrasenia) {
+        boolean estado=true;        
+        this.contrasenia=contrasenia;
+        return estado;
+        
     }
     
     
