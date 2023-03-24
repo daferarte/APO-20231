@@ -4,6 +4,9 @@
  */
 package Vistas;
 
+import Controlador.ControladorLogin;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sistemas
@@ -12,11 +15,13 @@ public class Login extends javax.swing.JFrame {
 
     private static Login login;
     
+    private ControladorLogin cLogin;
     /**
      * Creates new form Login
      */
     private Login() {
         initComponents();
+        cLogin=new ControladorLogin();
     }
 
     public static Login getLogin(){
@@ -82,6 +87,11 @@ public class Login extends javax.swing.JFrame {
         jPanel2.add(contrasenia);
 
         jButton1.setText("Iniciar Sesión");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton1);
 
         jPanel1.add(jPanel2);
@@ -110,6 +120,15 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         olvido.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_olvidoMouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        if(cLogin.VerificarUsuarios(usuario.getText(), contrasenia.getText()))
+            JOptionPane.showMessageDialog(this, "Usuario correcto", "Información", JOptionPane.OK_OPTION);
+        else
+            JOptionPane.showMessageDialog(this, "Usuario incorrecto", "Información", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
   
 
