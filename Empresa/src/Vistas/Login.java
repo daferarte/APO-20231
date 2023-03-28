@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author sistemas
+ * @version 
  */
 public class Login extends javax.swing.JFrame {
 
@@ -18,7 +19,8 @@ public class Login extends javax.swing.JFrame {
     private DAOLogin cLogin=ControladorLogin.getControladorLogin();
     
     /**
-     * Creates new form Login
+     * @method Login
+     * sirve para --...
      */
     private Login() {
         initComponents();
