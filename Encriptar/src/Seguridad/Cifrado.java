@@ -58,4 +58,17 @@ public class Cifrado {
         return encriptado;
         
     }
+    public String desencriptar(String datos) throws UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException{
+        SecretKeySpec secretKey = this.crearClave(this.claveSecreta);
+        
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        cipher.init(Cipher.DECRYPT_MODE, secretKey);
+        
+        byte[] datosDesencriptar = Base64.getDecoder().decode(datos);
+        byte[] bytesDesencriptados = cipher.doFinal(datosDesencriptar);
+        String encriptado = new String(bytesDesencriptados);
+        
+        return encriptado;
+        
+    }
 }
