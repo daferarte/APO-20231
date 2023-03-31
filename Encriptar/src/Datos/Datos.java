@@ -20,11 +20,13 @@ import javax.crypto.NoSuchPaddingException;
  */
 public class Datos {
     public static void main(String[] args) {
+        
+        
         Cifrado encriptar = new Cifrado();
         
         try {
             
-            System.out.println(encriptar.encriptar("hola mundo", "daniel"));
+            System.out.println(encriptar.encriptar("hola mundo"));
         
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(Datos.class.getName()).log(Level.SEVERE, null, ex);

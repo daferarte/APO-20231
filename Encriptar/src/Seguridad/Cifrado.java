@@ -10,6 +10,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.ResourceBundle;
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
@@ -22,6 +23,14 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class Cifrado {
     
+    private ResourceBundle env;
+    private String claveSecreta;
+
+    public Cifrado() {
+        this.env = ResourceBundle.getBundle("jdbc");
+        this.claveSecreta = env.getString("clavesecreta");
+    }
+      
     private SecretKeySpec crearClave(String clave) throws UnsupportedEncodingException, NoSuchAlgorithmException{
         
         byte[] claveEncriptar = clave.getBytes("UTF-8");
@@ -36,8 +45,8 @@ public class Cifrado {
         
     }
     
-    public String encriptar(String datos, String claveSecreta) throws UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException{
-        SecretKeySpec secretKey = this.crearClave(claveSecreta);
+    public String encriptar(String datos) throws UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException{
+        SecretKeySpec secretKey = this.crearClave(this.claveSecreta);
         
         Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
         cipher.init(Cipher.ENCRYPT_MODE, secretKey);
