@@ -1,0 +1,8 @@
+
+paso 2
+
+Importar el .jar realizado desde el DAO
+
+Opcion libraries -> clic derecho -> opcion: add JAR/Folder -> el jar esta en la opcion dist
+
+Crear controladores
