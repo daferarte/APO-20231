@@ -11,6 +11,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * clase usuarios controller implementa el dao para funcionar
@@ -128,6 +129,41 @@ public class UsuariosController extends UnicastRemoteObject implements UsuariosD
     @Override
     public String RecuperarContrasenia(String usuario) throws RemoteException {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public DefaultTableModel MostrarUsuarios() throws RemoteException {
+        DefaultTableModel modelo=new DefaultTableModel();
+        
+        //titulos de columnas
+        modelo.addColumn("Id");
+        modelo.addColumn("Usuario");
+        modelo.addColumn("Contraseña");
+        modelo.addColumn("Correo");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Apellido");
+        modelo.addColumn("Teléfono");
+        
+        // Recorrido de datos
+        for(int i=0;i<this.control;i++){
+            //creo un objeto para insertarlo en la tabla
+            Object[] fila = new Object[7];
+            
+            // agregando datos al objeto
+            fila[0]=(i+1);
+            fila[1]=this.datos[i][0];
+            fila[2]=this.datos[i][1];
+            fila[3]=this.datos[i][2];
+            fila[4]=this.datos[i][3];
+            fila[5]=this.datos[i][4];
+            fila[6]=this.datos[i][5];
+            
+            //Inserto el objeto en la fila
+            modelo.addRow(fila);
+        }
+        
+        // Retorno el objeto
+        return modelo;
     }
     
 }

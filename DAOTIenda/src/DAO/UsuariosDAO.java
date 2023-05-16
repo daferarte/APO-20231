@@ -14,6 +14,7 @@ package DAO;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import javax.swing.DefaultListModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * interface UsuariosDAO
@@ -50,6 +51,8 @@ public interface UsuariosDAO extends Remote{
     ) throws RemoteException;
     
     public DefaultListModel MostrarUsuario(String usuario)throws RemoteException;
+    
+    public DefaultTableModel MostrarUsuarios() throws RemoteException;
     
     public String MostrarContrasenia(String usuario)throws RemoteException;
     

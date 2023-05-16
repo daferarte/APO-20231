@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background: #ecf0f1;
+            }
+            
+            h1{
+                font-size: 50px;
+            }
+            
+            p{
+                font-size: 30px; 
+                color: red;
+            }
+            input, td{
+                font-size: 18px; 
+                background: #f3f3f3;
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <h1>Hola estudiantes</h1>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <form>
+            <table>
+                <tr>
+                    <td>Nombres </td>
+                    <td><input type="text" required/></td>
+                    <td>Apellidos</td>
+                    <td><input type="text" required/></td>
+                </tr>
+                <tr>
+                    <td>Correo </td>
+                    <td><input type="email" required/></td>
+                    <td>Telefono</td>
+                    <td><input type="number" min="10" max="10" required/></td>
+                </tr>
+                <tr>
+                    <td>Contraseña </td>
+                    <td><input type="password" required/></td>
+                    <td>Verificar Contraseña</td>
+                    <td><input type="password" required/></td>
+                </tr>
+                <tr>
+                    <td>Gustos </td>
+                    <td colspan="3">
+                        <label for="musica">Musica</label>
+                        <input type="checkbox" name="musica" id="musica" value="Musica"/>
+                        <label for="pelicula">Peliculas</label>
+                        <input type="checkbox" name="pelicula" id="pelicula" value="Peliculas"/>
+                        <label for="serie">Series</label>
+                        <input type="checkbox" name="serie" id="serie" value="Series"/>
+                    </td>                    
+                </tr>
+                <tr>
+                    <td>Sexo </td>
+                    <td>
+                        <select>
+                            <option value="1">Masculino</option>
+                            <option value="2">Femenino</option>
+                        </select>
+                    </td>
+                    <td>Cumpleaños</td>
+                    <td><input type="date" /></td>
+                </tr>
+                <tr>
+                    <td>Nivel de pobreza</td>
+                    <td>
+                        <input type="range" name="range" id="range" min="1" max="10" />
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Clic me!"/>
+            <input type="reset"/>
+        </form>
+        
+        <div>TODO write content</div>
+    </body>
+</html>
